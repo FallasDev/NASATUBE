@@ -3,6 +3,8 @@ import { useState } from "react"
 import Caja from "./caja";
 import { Link, useParams } from "react-router-dom";
 import "../styles/inicio.css"
+import { Header } from "./header";
+import Logo  from '../imagenes/Nasa.webp'
 
 export function Inicio(){
 
@@ -30,7 +32,14 @@ export function Inicio(){
         setInputValue(ev.target.value)
     }
     return <form action="" className="inicio-container">
-        <input type="text" name="search" value={inputValue} onChange={handleInput}/>
+    <Header className="input-container" 
+    search={
+        <input className="input" placeholder="Buscar..." type="text" name="search" value={inputValue} onChange={handleInput}/>
+    }
+    navClass="nav-container"
+    logo={Logo}
+    sobreNosotros={<h4>Videos favoritos</h4>}
+    />
         {apiData && apiData.length > 0 ? 
         <ul className="inicio-videos-container">
             {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Caja from "./caja"
 import { Link } from "react-router-dom";
+import "../styles/listVideos.css"
 export default function ListVideos(){
 
     const [video, setVideo] = useState([])
@@ -16,10 +17,10 @@ export default function ListVideos(){
                 }
                 const dato = await response.json()
                 const listVideo = dato.collection.items
-                const firstVideos = listVideo.filter((item,index) => index < 10)
+                const videos = listVideo.filter((item) => item.data[0].media_type === "video")
+                const firstVideos = videos.filter((item,index) => 5 > index)
                 console.log(firstVideos)
                 setVideo(firstVideos)
-                console.log(firstVideos)
             }
         } catch (error) {
             console.log(error)
@@ -28,7 +29,7 @@ export default function ListVideos(){
     consultarListaV()
     },[])
     return (
-        <ul>
+        <ul className="list-videos">
             {video.map((item) => 
             <Link to="/video"> 
             <li onClick={
@@ -40,8 +41,9 @@ export default function ListVideos(){
                 }
             }>
                 <Caja
+                className="video-in-list"
                 key={item.nasa_id}
-                title={item.title}
+                title={item.data[0].title}
                 image={item.links && item.links.length > 0 && (<img src={item.links[0]?.href} alt="Sin vista previa" />)}
             />
             </li> </Link>

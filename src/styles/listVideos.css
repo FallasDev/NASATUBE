@@ -1,0 +1,25 @@
+.list-videos{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.video-in-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.video-in-list img{
+    width: 300px
+}
+
+.video-in-list h3{
+    text-align: start;
+    width: 300px;
+    color: black;
+}

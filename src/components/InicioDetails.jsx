@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import InfoVideo from "./infoVideo";
 import ListVideos from "./listVideos";
 import { Link } from "react-router-dom";
+import '../styles/inicioDetails.css'
+import {Header} from './header'
+import Logo  from '../imagenes/Nasa.webp'
 
 function InicioDetails() {
   const [video, setVideo] = useState("");
@@ -52,11 +55,17 @@ function InicioDetails() {
   }, [sessionStorage.getItem("id_video")]);
 
   return (
-    <div>
+    <main>
+       <Header className="input-container" 
+        navClass="nav-container"
+        logo={Logo}
+        />
+    <div className="inicio-details-container">
+      <section className="video-info-caja">
       {loading && <p>Cargando video...</p>}
       {error && <p>Error: {error}</p>}
       {video && (
-        <video controls width="600" height="400">
+        <video className="video-reproducion" controls width="100%" height="auto-fit">
          
           <source src={video.href} type="video/webM" />
           Tu navegador no soporta el elemento de video.
@@ -70,7 +79,7 @@ function InicioDetails() {
         keywords={
           item.keywords && item.keywords.length > 0
             ? item.keywords[0].split(",").map(
-                (keyword, index) => index < 5 && <span>#{keyword.replaceAll(" ", "")} </span>
+                (keyword, index) => index < 5 && <span>  #{keyword.replaceAll(" ", "")}</span>
               )
             : ""
         }
@@ -78,10 +87,12 @@ function InicioDetails() {
         />       
       </div>
       )}
+      </section>
       <aside>
         <ListVideos/>
       </aside>
     </div>
+    </main>
   );
 }
 
