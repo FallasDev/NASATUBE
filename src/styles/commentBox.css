@@ -1,0 +1,89 @@
+.comment-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 10px;
+    width: 100%;
+    height: fit-content;
+}
+.num-comments{
+    font-size: 1.4em;
+}
+.input-comments{
+    background-color: transparent;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 2px solid;
+    border-color: gainsboro;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-comments:focus{
+    outline: none;
+    border-color: black;
+}
+.inputButtons-comments{
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.buttons-comments{
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+}
+
+.buttons-comments button {
+    border-radius: 18px;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.buttons-comments button:first-child{
+    background-color: transparent;
+}
+
+.buttons-comments button:first-child:hover{
+    background-color: #eae9e9;
+}
+
+.buttons-comments button:last-child{
+    background-color: #065FD4;
+    color: white; 
+}
+
+.buttons-comments button:last-child:hover{
+    background-color: #2764b3;
+    border-radius: 18px;
+}
+.buttons-comments button:last-child:disabled{
+    background-color: #F2F2F2;
+    cursor: default;
+}
+
+.comment{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.user-comment{
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+.user-comment span{
+    font-size: 0.8em;
+}
+
+.fotoDefault{
+    grid-area: fotoDefault;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

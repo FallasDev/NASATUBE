@@ -5,7 +5,6 @@ export default function InfoVideo({title,dataCreated,keywords,description,classN
 
     const [caja, setCaja] = useState("info-video-caja")
 
-
     return (
         <section className='section-info-video'>
             <h3>{title}</h3>
@@ -21,5 +20,6 @@ export default function InfoVideo({title,dataCreated,keywords,description,classN
                 }}>Mostrar menos</button>}
             </div>
         </section>
+        
     )
 }

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
+    width: 100%;
 }
 .video-in-list{
     display: flex;

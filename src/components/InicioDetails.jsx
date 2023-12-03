@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import '../styles/inicioDetails.css'
 import {Header} from './header'
 import Logo  from '../imagenes/Nasa.webp'
+import { CommentBox } from "./commentsBox";
 
 function InicioDetails() {
   const [video, setVideo] = useState("");
@@ -61,16 +62,17 @@ function InicioDetails() {
         logo={Logo}
         />
     <div className="inicio-details-container">
+      <div className="caja-video">
+        {loading && <p>Cargando video...</p>}
+        {error && <p>Error: {error}</p>}
+        {video && (
+          <video className="video-reproducion" controls width="100%" height="auto-fit">
+            <source src={video.href} type="video/webM" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        )}
+      </div>
       <section className="video-info-caja">
-      {loading && <p>Cargando video...</p>}
-      {error && <p>Error: {error}</p>}
-      {video && (
-        <video className="video-reproducion" controls width="100%" height="auto-fit">
-         
-          <source src={video.href} type="video/webM" />
-          Tu navegador no soporta el elemento de video.
-        </video>
-      )}
       {api.map((item,index) =>
       <div key={item.nasa_id}>
         <InfoVideo
@@ -91,6 +93,9 @@ function InicioDetails() {
       <aside>
         <ListVideos/>
       </aside>
+      <div className="comment-inicio">
+        <CommentBox/>
+      </div>
     </div>
     </main>
   );
