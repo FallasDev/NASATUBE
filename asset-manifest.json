@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NASATUBE/static/css/main.e28c1908.css",
+    "main.js": "/NASATUBE/static/js/main.280adaeb.js",
+    "static/media/Nasa.webp": "/NASATUBE/static/media/Nasa.ad00f795eaed17f5cf9f.webp",
+    "static/media/fotoPerfil.webp": "/NASATUBE/static/media/fotoPerfil.d5ef4e09dbd01c6c8925.webp",
+    "index.html": "/NASATUBE/index.html",
+    "main.e28c1908.css.map": "/NASATUBE/static/css/main.e28c1908.css.map",
+    "main.280adaeb.js.map": "/NASATUBE/static/js/main.280adaeb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e28c1908.css",
+    "static/js/main.280adaeb.js"
+  ]
+}
