@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import InfoVideo from "./infoVideo";
 import ListVideos from "./listVideos";
-import { Link } from "react-router-dom";
 import '../styles/inicioDetails.css'
-import {Header} from './header'
+import { Header } from './header'
 import Logo  from '../imagenes/Nasa.webp'
 import { CommentBox } from "./commentsBox";
 
@@ -40,7 +39,6 @@ function InicioDetails() {
           const array = arrayData.collection.items[0].data
           setApi(array)
           const mp4 = videoUrl.find((item,index) => item?.href.includes("mp4"))
-          console.log(mp4.href)
           setVideo(mp4);
         } else {
           throw new Error("No se encontraron datos de video.");
@@ -87,6 +85,7 @@ function InicioDetails() {
         }
         description={item.description}
         />       
+      
       </div>
       )}
       </section>

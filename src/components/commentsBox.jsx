@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import fotoPerfil from '../imagenes/fotoPerfil.webp'
 import '../styles/commentBox.css'
 
@@ -15,7 +15,6 @@ export function CommentBox() {
 
     const [hasComment, setHasComment] = useState("");
     const [inputFocus, setInputFocus] = useState(false)
-    const [randomUser, setRandomUser] = useState(null)
 
     const handleInput = (ev) => {
         setHasComment(ev.target.value)
@@ -42,14 +41,8 @@ export function CommentBox() {
         eliminateRepeatStorage()
         if(hasComment.length > 0){
             localStorage.setItem("comments", JSON.stringify(commentsStorage))
-        } else{
-            alert("Comentario invalido!")
         }
-        console.log(commentsStorage)
-        console.log(commentsStorage.find(item => item.id === idVideo))
-        console.log(randomUser)
         setHasComment("")
-        localStorage.clear()
     }
 
     return (

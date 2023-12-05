@@ -19,11 +19,10 @@ export default function ListVideos(){
                 const listVideo = dato.collection.items
                 const videos = listVideo.filter((item) => item.data[0].media_type === "video")
                 const firstVideos = videos.filter((item,index) => 5 > index)
-                console.log(firstVideos)
                 setVideo(firstVideos)
             }
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
     consultarListaV()

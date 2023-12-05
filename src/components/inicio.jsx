@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 import Caja from "./caja";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "../styles/inicio.css"
 import { Header } from "./header";
 import Logo  from '../imagenes/Nasa.webp'
@@ -21,7 +21,6 @@ export function Inicio(){
                 }    
                 const data = await response.json()
                 setApiData(data.collection.items)
-                console.log(data.collection.items)
         } catch(error){
             console.log(error)
         }
@@ -38,12 +37,12 @@ export function Inicio(){
     }
     navClass="nav-container"
     logo={Logo}
-    sobreNosotros={<h4>Videos favoritos</h4>}
+    sobreNosotros={<h4></h4>}
     />
-        {apiData && apiData.length > 0 ? 
+        {apiData && apiData.length > 0 &&
         <ul className="inicio-videos-container">
             {
-            apiData.map((item, index) => (item.data[0].media_type === "video") ?
+            apiData.map((item, index) => (item.data[0].media_type === "video") &&
             <Link to="/video">
                     <Caja 
                     className="video"
@@ -60,10 +59,8 @@ export function Inicio(){
                     } 
                     image={item.links && item.links.length > 0 && (<img className="img-video" src={item.links[0]?.href} alt="Sin vista previa" />)}
                     /> 
-                </Link>: null
-            
+                </Link>         
             )}
-        </ul>
-        :  () => {console.log(apiData)}}       
+        </ul>}       
     </form>
 }
