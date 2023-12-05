@@ -1,5 +1,5 @@
 import { Inicio } from './components/inicio';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import InicioDetails from './components/InicioDetails';
 
 function App() {
