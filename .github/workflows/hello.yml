@@ -1,0 +1,13 @@
+name: NASATUBE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_website:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Echo the message
+        run: echo "Hello, World!"
